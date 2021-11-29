@@ -246,6 +246,19 @@ CMD ["java", "-jar", "test"]
 EXPOSE 8080
 ```
 
+Pour créer une image dont le nom est ``spring29novembre``: `` docker build -t spring29novembre``. A ce stade, on l'image  ``spring29novembre``. 
+
+
+```Dockerfile  
+#spring.datasource.url=jdbc:mysql://localhost:8889/produitsdocker?serverTimezone=UTC
+# pour docker ....
+spring.datasource.url=jdbc:mysql://nomconteneurmysql:3306/produitsdocker
+spring.datasource.username=root
+spring.datasource.password=root
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=create
+```
+
 Pour le lancer : ``docker run -p 8181:8080 --link nomconteneurmysql: nomconteneurmysql  -d webspring``
 
 ---
@@ -452,21 +465,4 @@ Pour définir un arbitre, comme pour le autre serveurs qui font partie de cette 
 
 #### Travail à rendre 
 
-Développer un micro-service qui utilise pour la persistance des données MongoDB. Créer une image Docker de votre service et renseigner le lien au début (vraiment au début) de votre redme.md pour la télécharger.  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
+Développer un micro-service qui utilise pour la persistance des données MongoDB. Créer une image Docker de votre service et renseigner le lien au début (vraiment au début) de votre redme.md pour la télécharger.
