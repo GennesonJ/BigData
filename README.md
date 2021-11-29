@@ -240,13 +240,10 @@ Nous avons à présent un conteneur qui peut être utilisé notre API Rest. Il n
 
 
 ```Dockerfile  
-#spring.datasource.url=jdbc:mysql://localhost:8889/produitsdocker?serverTimezone=UTC
-# pour docker ....
-spring.datasource.url=jdbc:mysql://nomconteneurmysql:3306/produitsdocker
-spring.datasource.username=root
-spring.datasource.password=root
-#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.hibernate.ddl-auto=create
+FROM openjdk:8
+ADD target/test.jar test.jar
+CMD ["java", "-jar", "test"]
+EXPOSE 8080
 ```
 
 Pour le lancer : ``docker run -p 8181:8080 --link nomconteneurmysql: nomconteneurmysql  -d webspring``
