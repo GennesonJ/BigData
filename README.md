@@ -359,8 +359,8 @@ Une fois les restaurants importés dans une base de données ``restaurants``, vo
 ```
 
 
+#### Filtrage et projection avec un motif JSON 
 
-#### Filtrage et projection avec un motif JSON
 Commençons par parcourir toute une collection. On utilise la fonction ``find()``sans argument. 
 
 ``db.restaurants.find()``
@@ -385,6 +385,7 @@ Si on veut afficher tous les restaurants du quartier par exemple ``manathan`` : 
 db.getCollection('restaurants').find({"borough" : "Manhattan",  "cuisine" : "Italian", "address.street" : "3 Avenue"}, {"name":1, "grades.score":1,  "_id":0}).sort({"name":-1})`` 
 
 #### Projection 
+
 
 
 #### Création d'une séquence d'opérations
