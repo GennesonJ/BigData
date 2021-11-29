@@ -74,7 +74,7 @@ Commands:
 Pour faire "mapping volume" 
 
 
-``docker run -dti -p 8080:80 -v /Users/syoucef/Desktop/dockerexample/mapage/:/usr/share/nginx/html/ --name myserverweeb nginx``
+``docker run -dti -p 8080:80 -v C:\Users\jerem\Desktop\backupnginx:/usr/share/nginx/html/ --name myserverweb nginx``
 
 ``docker run -tid --name webvolumebis -p 8691:80 --mount source=mesdonnees,target=/usr/share/nginx/html/ nginx`` 
 
@@ -86,17 +86,17 @@ Pour accéder aux volumes (sous mac) :
 Une fois à l'intéreiur du conteneur, les volumes se trouvent dans le dossier :  ``/var/lib/docker/volumes/``
 
 
-La soslution ici : https://stackoverflow.com/questions/38532483/where-is-var-lib-docker-on-mac-os-x
+La solution ici : https://stackoverflow.com/questions/38532483/where-is-var-lib-docker-on-mac-os-x
 
 
 Gestion des variables d'environnement : 
 
-``docker run -tid --name variableenvironnement --env MAVARIABLE="samir1234" ubuntu:latest ``
+``docker run -tid --name variableenvironnement --env MAVARIABLE="genneson1234" ubuntu:latest ``
 
  Passer une variable d'environnemnt en ligne de commande : ``docker exec -ti variableenvironnement sh``
  
  
- On peut asussi passer un ensemble de variables d'environnement sauvegardé dans un fichier : 
+ On peut aussi passer un ensemble de variables d'environnement sauvegardé dans un fichier : 
  
  
  ``docker run -tid --name fichiervariableenvironnement --env-file mesvariables.lst  ubuntu:latest ``
@@ -176,16 +176,16 @@ EXPOSE 80
 ```
 
 
-``docker run -d -p 9090:8080 syoucef/springcm19novembre``
+``docker run -d -p 9090:8080 jerem/springcm19novembre``
  
  
  Publier une image sur DockerHub :
  
  1. Créer son image, soit ``josephadd``
- 2. Créer un dépôt dockerHub ``syoucef/joseph``
+ 2. Créer un dépôt dockerHub ``jerem/joseph``
  3. Se connecter à DockerHub via ligne de commande : ``docker login`` (facultatif si on utilise docker desktop)
- 4. Créer un lien entre l'image ``josephadd``et ``syoucef/joseph`` : ``docker tag josephadd syoucef/joseph``
- 5. Envoyer l'image vers Dockerhub ``docker push syoucef/joseph``
+ 4. Créer un lien entre l'image ``josephadd``et ``jerem/joseph`` : ``docker tag josephadd jerem/joseph``
+ 5. Envoyer l'image vers Dockerhub ``docker push jerem/joseph``
 
  
 Pour chercher une image par ligne de commande ``docker serach nom_image``
